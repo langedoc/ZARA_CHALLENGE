@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import styles from './page.module.css';
 import { usePhones } from './utils/usePhones';
@@ -15,7 +15,6 @@ export default function Home() {
   );
 }
 
-
 const Content = () => {
   const { data, isLoading, error } = usePhones();
 
@@ -25,16 +24,17 @@ const Content = () => {
   /* Some of the models in the fetched data are duplicated,
   to avoid showing the same model twice and have problems with keys
   create Set to select unique phone IDs*/
-  const uniquePhones = Array.from(new Set(data.map(phone => phone.id)))
-    .map(id => data.find(phone => phone.id === id));
+  const uniquePhones = Array.from(new Set(data.map((phone) => phone.id))).map(
+    (id) => data.find((phone) => phone.id === id)
+  );
 
   return (
     <div className={styles.page}>
       <div className={styles.cards_container}>
-          {uniquePhones.map(phone => (
-            <SmartphoneCard key={phone.id} phone={phone}/>
-          ))}
+        {uniquePhones.map((phone) => (
+          <SmartphoneCard key={phone.id} phone={phone} />
+        ))}
       </div>
     </div>
   );
-}
+};
