@@ -6,7 +6,9 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img src='/Logo.png' alt='Logo' />
+                <a href='/'>
+                    <img src='/Logo.png' alt='Logo' />
+                </a>
             </div>
             <div className={styles.cart_container}>
                 <LiaShoppingBagSolid className={styles.icon}/>
