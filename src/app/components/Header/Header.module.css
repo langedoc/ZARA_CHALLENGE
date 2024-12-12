@@ -28,7 +28,7 @@
     justify-content: center;
     width: 33px;
     height: 26px;
-    padding: 4px 0px 4px 0px;
+    padding: 4px 0px;
     gap: 6px;
     opacity: 0px;
 }
@@ -52,4 +52,16 @@
     width: 9px;
     height: 16px;
     opacity: 1;
+}
+
+@media (max-width: 834px) {
+    .header {
+        padding: 24px 40px;
+    }
+}
+
+@media (max-width: 393px) {
+    .header {
+        padding: 24px 16px;
+    }
 }
