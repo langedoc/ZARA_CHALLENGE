@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 import { usePhones } from './utils/usePhones';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import SmartphoneCard from './components/SmartphoneCard/SmartphoneCard';
 
 const queryClient = new QueryClient();
 
@@ -29,11 +30,11 @@ const Content = () => {
 
   return (
     <div className={styles.page}>
-      <ul>
-        {uniquePhones.map(phone => (
-          <li key={phone.id}>{phone.name}</li>
-        ))}
-      </ul>
+      <div className={styles.cards_container}>
+          {uniquePhones.map(phone => (
+            <SmartphoneCard key={phone.id} name={phone.name}/>
+          ))}
+      </div>
     </div>
   );
 }
