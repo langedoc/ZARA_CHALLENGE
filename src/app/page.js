@@ -32,7 +32,7 @@ const Content = () => {
     <div className={styles.page}>
       <div className={styles.cards_container}>
           {uniquePhones.map(phone => (
-            <SmartphoneCard key={phone.id} name={phone.name}/>
+            <SmartphoneCard key={phone.id} phone={phone}/>
           ))}
       </div>
     </div>
