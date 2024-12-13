@@ -1,0 +1,43 @@
+.searchWrapper {
+    width: 100%;
+    height: 87px;
+    padding: 12px 100px 12px 100px;
+    gap: 12px;
+    opacity: 0px;
+}
+
+.searchInput {
+    width: 1720px;
+    height: 27px;
+    gap: 24px;
+    border: none;
+    border-bottom: 0.5px solid #000000;
+    opacity: 0px;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.34px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #AAAAAA;
+}
+
+.results div {
+    width: 1720px;
+    height: 24px;
+    gap: 0px;
+    justify-content: space-between;
+    opacity: 0px;
+}
+
+.results {
+    font-family: Helvetica Neue;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14.51px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+}

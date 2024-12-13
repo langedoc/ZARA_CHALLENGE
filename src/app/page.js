@@ -1,9 +1,11 @@
 'use client';
 
+import Search from './components/Search/Search';
+import SmartphoneList from './components/SmartphoneList/SmartphoneList';
 import styles from './page.module.css';
-import { usePhones } from './utils/usePhones';
+import { usePhones } from './hooks/usePhones';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import SmartphoneCard from './components/SmartphoneCard/SmartphoneCard';
+
 
 const queryClient = new QueryClient();
 
@@ -26,15 +28,12 @@ const Content = () => {
   create Set to select unique phone IDs*/
   const uniquePhones = Array.from(new Set(data.map((phone) => phone.id))).map(
     (id) => data.find((phone) => phone.id === id)
-  );
+  ).slice(0, 20);
 
   return (
     <div className={styles.page}>
-      <div className={styles.cards_container}>
-        {uniquePhones.map((phone) => (
-          <SmartphoneCard key={phone.id} phone={phone} />
-        ))}
-      </div>
+      <Search />
+      <SmartphoneList phones={uniquePhones} />
     </div>
   );
 };

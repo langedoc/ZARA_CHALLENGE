@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './SmartphoneCard.module.css';
 
 export default function SmartphoneCard({ phone }) {
@@ -17,3 +18,12 @@ export default function SmartphoneCard({ phone }) {
     </div>
   );
 }
+
+SmartphoneCard.propTypes = {
+  phone: PropTypes.shape({
+    imageUrl: PropTypes.string.isRequired,
+    brand: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    basePrice: PropTypes.number.isRequired,
+  }).isRequired,
+};
