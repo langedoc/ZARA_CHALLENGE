@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SmartphoneList.module.css';
 import SmartphoneCard from './../SmartphoneCard/SmartphoneCard';
+import { usePhonesSearch } from '../../context/PhonesContext';
 
-export default function SmartphoneList({ phones }) {
+export default function SmartphoneList() {
+    const { uniquePhones } = usePhonesSearch();
+
     return (
         <div className={styles.cards_container}>
-            {phones.map((phone) => (
+            {uniquePhones.map((phone) => (
                 <SmartphoneCard key={phone.id} phone={phone} />
             )
             )}

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Search.module.css';
+import { usePhonesSearch } from '../../context/PhonesContext';
 
-export default function Search({ onSearch }) {
+export default function Search() {
+    const { setSearchQuery, uniquePhones } = usePhonesSearch();
     const [query, setQuery] = useState('');
 
     const handleInputChange = (event) => {
@@ -11,12 +13,12 @@ export default function Search({ onSearch }) {
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            onSearch(query);
-        }, 300);
+            setSearchQuery(query);
+        }, 600); // Delay to avoid making too many requests
 
         return () => clearTimeout(delayDebounceFn);
 
-    }, [query, onSearch]);
+    }, [query, setSearchQuery]);
 
     return (
         <div className={styles.searchWrapper}>
@@ -28,7 +30,7 @@ export default function Search({ onSearch }) {
                 onChange={handleInputChange}
             />
             <div>
-                <p className={styles.results}>RESULTS</p>
+                <p className={styles.results}>{uniquePhones.length} RESULTS</p>
             </div>
         </div>
     );
@@ -36,4 +38,5 @@ export default function Search({ onSearch }) {
 
 Search.propTypes = {
     onSearch: PropTypes.func.isRequired,
+    result: PropTypes.number.isRequired,
 };
