@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_URL =
-  'https://prueba-tecnica-api-tienda-moviles.onrender.com/products';
+  'https://prueba-tecnica-api-tienda-moviles.onrender.com';
 
 const apiClient = axios.create({
   baseURL: API_URL,

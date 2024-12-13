@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState } from 'react';
 import Search from './components/Search/Search';
 import SmartphoneList from './components/SmartphoneList/SmartphoneList';
 import styles from './page.module.css';
@@ -18,7 +19,8 @@ export default function Home() {
 }
 
 const Content = () => {
-  const { data, isLoading, error } = usePhones();
+  const [searchQuery, setSearchQuery] = useState('');
+  const { data, isLoading, error } = usePhones(searchQuery);
 
   if (isLoading) return null;
   if (error) return <div>Error fetching data</div>;
@@ -32,7 +34,7 @@ const Content = () => {
 
   return (
     <div className={styles.page}>
-      <Search />
+      <Search onSearch={setSearchQuery} />
       <SmartphoneList phones={uniquePhones} />
     </div>
   );
