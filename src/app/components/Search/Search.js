@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Search.module.css';
 import { usePhonesSearch } from '../../context/PhonesContext';
+import { IoCloseOutline } from "react-icons/io5";
 
 export default function Search() {
     const { setSearchQuery, uniquePhones } = usePhonesSearch();
@@ -22,13 +23,23 @@ export default function Search() {
 
     return (
         <div className={styles.searchWrapper}>
-            <input
-                type='text'
-                className={styles.searchInput}
-                placeholder='Search for a smartphone...'
-                value={query}
-                onChange={handleInputChange}
-            />
+            <div className={styles.searchBar}>
+                <input
+                    type='text'
+                    className={styles.searchInput}
+                    placeholder='Search for a smartphone...'
+                    value={query}
+                    onChange={handleInputChange}
+                />
+                {query && (
+                    <button
+                        className={styles.clearButton}
+                        onClick={() => setQuery('')}
+                    >
+                        <IoCloseOutline />
+                    </button>
+                )}
+            </div>
             <div>
                 <p className={styles.results}>{uniquePhones.length} RESULTS</p>
             </div>
