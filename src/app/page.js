@@ -5,7 +5,7 @@ import Search from './components/Search/Search';
 import SmartphoneList from './components/SmartphoneList/SmartphoneList';
 import styles from './page.module.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { PhonesProvider } from './context/PhonesContext';
+import { PhonesProvider } from '../context/PhonesContext';
 
 
 const queryClient = new QueryClient();
