@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 344px;
+  height: 344px;
+  padding: 16px 0 0 0;
+  gap: 24px;
+  border: 0.5px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 312px;
+  height: 257px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.image_wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  width: 312px;
+  height: 31px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 31px;
+  gap: 4px;
+  opacity: 0px;
+}
+
+.brand_name,
+.model,
+.price {
+  width: 250px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+}
+
+.brand_name {
+  height: 12px;
+  font-size: 10px;
+  line-height: 12.09px;
+  color: #79736d;
+  text-align: left;
+}
+
+.model {
+  height: 15px;
+  font-size: 12px;
+  line-height: 14.51px;
+  text-align: left;
+}
+
+.price {
+  width: 54px;
+  height: 15px;
+  font-size: 12px;
+  line-height: 14.51px;
+  text-align: right;
+  align-self: flex-end;
+}
