@@ -3,6 +3,7 @@ import './globals.css';
 import Header from './components/Header/Header';
 import ClientProvider from './components/ClientProvider';
 import { PhonesProvider } from '../context/PhonesContext';
+import { PhonesDetailsProvider } from '@/context/PhonesDetailsContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,8 +28,10 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} font-sans`}>
         <ClientProvider>
           <PhonesProvider>
-            <Header />
-            {children}
+            <PhonesDetailsProvider>
+              <Header />
+              {children}
+            </PhonesDetailsProvider>
           </PhonesProvider>
         </ClientProvider>
       </body>
