@@ -12,6 +12,7 @@ export const usePhoneDetails = (id) => {
             if (!id) {
                 throw new Error('ID is required');
             }
+
             const data = await fetchData(`/products/${id}`);
             return data;
         },

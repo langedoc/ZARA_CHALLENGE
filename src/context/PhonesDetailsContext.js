@@ -9,7 +9,7 @@ const PhonesDetailsContext = createContext();
 export const usePhoneDetailsSearch = () => useContext(PhonesDetailsContext);
 
 export const PhonesDetailsProvider = ({ children }) => {
-    const [phoneId, setPhoneId] = useState('');
+    const [phoneId, setPhoneId] = useState(null);
     const { data, isLoading, error } = usePhoneDetails(phoneId);
 
     if (isLoading) return null;

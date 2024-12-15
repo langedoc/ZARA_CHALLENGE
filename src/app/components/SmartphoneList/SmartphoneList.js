@@ -11,7 +11,7 @@ export default function SmartphoneList() {
     return (
         <div className={styles.cards_container}>
             {uniquePhones.map((phone) => (
-                <Link href={`/phone`} key={phone.id}>
+                <Link href={`/phone/${phone.id}`} key={phone.id}>
                     <SmartphoneCard phone={phone} />
                 </Link>
             )
