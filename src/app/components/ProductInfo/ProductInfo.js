@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ProductInfo.module.css';
 import StorageInfo from '../StorageInfo/StorageInfo';
 import ColorsInfo from '../ColorsInfo/ColorsInfo';
+import AddToCart from '../AddToCart/AddToCart';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
@@ -43,6 +44,7 @@ export default function ProductInfo({ phoneDetails }) {
                         handleColorClick={handleColorClick}
                         selectedColor={selectedColor}
                     />
+                    <AddToCart capacity={selectedCapacity} color={selectedColor}/>
                 </div>
             </div>
         </div>
