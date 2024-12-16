@@ -27,12 +27,6 @@ export default function PhonePage() {
         <div className={styles.container}>
             <Back />
             <ProductInfo phoneDetails={phoneDetails} />
-            <div key={phoneDetails.id}>
-                <h1>{phoneDetails.brand} {phoneDetails.name}</h1>
-                <p>{phoneDetails.description}</p>
-                <p>Price: {phoneDetails.basePrice}</p>
-            </div>
-
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductInfo.module.css';
+import StorageInfo from '../StorageInfo/StorageInfo';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
@@ -23,20 +24,11 @@ export default function ProductInfo({ phoneDetails }) {
                     <p className={styles.price}>{phoneDetails.basePrice} EUR</p>
                 </div>
                 <div className={styles.selectors}>
-                    <div className={styles.storage}>
-                        <p>STORAGE ¿HOW MUCH SPACE DO YOU NEED?</p>
-                        <div className={styles.storage_options}>
-                            {phoneDetails.storageOptions.map((option) => (
-                                <div
-                                    key={option.capacity}
-                                    className={`${styles.capacity} ${selectedCapacity === option.capacity ? styles.active : ''}`}
-                                    onClick={() => handleCapacityClick(option.capacity)}
-                                >
-                                    <p>{option.capacity}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <StorageInfo
+                        storageOptions={phoneDetails.storageOptions}
+                        handleCapacityClick={handleCapacityClick}
+                        selectedCapacity={selectedCapacity}
+                    />
                 </div>
             </div>
         </div>
