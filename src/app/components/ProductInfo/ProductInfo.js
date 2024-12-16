@@ -20,8 +20,8 @@ export default function ProductInfo({ phoneDetails }) {
             </div>
             <div className={styles.product_info}>
                 <div className={styles.title_price}>
-                    <p className={styles.name}>{phoneDetails.name.toUpperCase()}</p>
-                    <p className={styles.price}>{phoneDetails.basePrice} EUR</p>
+                    <h1 className={styles.name}>{phoneDetails.name.toUpperCase()}</h1>
+                    <h2 className={styles.price}>{phoneDetails.basePrice} EUR</h2>
                 </div>
                 <div className={styles.selectors}>
                     <StorageInfo

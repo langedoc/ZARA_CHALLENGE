@@ -6,6 +6,7 @@ import styles from './page.module.css';
 import { usePhoneDetailsSearch } from '@/context/PhonesDetailsContext';
 import Back from '../../components/Back/Back';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
+import Specs from '../../components/Specs/Specs';
 
 export default function PhonePage() {
     const pathname = usePathname();
@@ -27,6 +28,7 @@ export default function PhonePage() {
         <div className={styles.container}>
             <Back />
             <ProductInfo phoneDetails={phoneDetails} />
+            <Specs specs={phoneDetails.specs}/>
         </div>
     );
 }
