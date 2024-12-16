@@ -7,6 +7,9 @@ import ColorsInfo from '../ColorsInfo/ColorsInfo';
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
+    
+    const selectedColorOption = phoneDetails.colorOptions.find(option => option.name === selectedColor);
+    const imageUrl = selectedColor ? selectedColorOption.imageUrl : phoneDetails.colorOptions[0].imageUrl; 
 
     const handleCapacityClick = (capacity) => {
         setSelectedCapacity(capacity);
@@ -20,7 +23,7 @@ export default function ProductInfo({ phoneDetails }) {
         <div className={styles.container}>
             <div className={styles.image_wrapper}>
                 <img
-                    src={phoneDetails.colorOptions[0].imageUrl}
+                    src={imageUrl}
                     alt={`${phoneDetails.name}, ${phoneDetails.colorOptions[0].name}`}
                 />
             </div>
