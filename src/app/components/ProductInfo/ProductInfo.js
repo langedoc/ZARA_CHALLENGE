@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductInfo.module.css';
 import StorageInfo from '../StorageInfo/StorageInfo';
+import ColorsInfo from '../ColorsInfo/ColorsInfo';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
+    const [selectedColor, setSelectedColor] = useState(null);
 
     const handleCapacityClick = (capacity) => {
         setSelectedCapacity(capacity);
     };
+
+    const handleColorClick = (color) => {
+        setSelectedColor(color);
+    }
 
     return (
         <div className={styles.container}>
@@ -28,6 +34,11 @@ export default function ProductInfo({ phoneDetails }) {
                         storageOptions={phoneDetails.storageOptions}
                         handleCapacityClick={handleCapacityClick}
                         selectedCapacity={selectedCapacity}
+                    />
+                    <ColorsInfo
+                        colorOptions={phoneDetails.colorOptions}
+                        handleColorClick={handleColorClick}
+                        selectedColor={selectedColor}
                     />
                 </div>
             </div>

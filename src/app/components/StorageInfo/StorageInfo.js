@@ -6,7 +6,7 @@ import styles from './StorageInfo.module.css';
 export default function StorageInfo({ storageOptions, handleCapacityClick, selectedCapacity }) {
     return (
         <div className={styles.storage}>
-            <p>STORAGE ¿HOW MUCH SPACE DO YOU NEED?</p>
+            <h3>STORAGE ¿HOW MUCH SPACE DO YOU NEED?</h3>
             <div className={styles.storage_options}>
                 {storageOptions.map((option) => (
                     <div
