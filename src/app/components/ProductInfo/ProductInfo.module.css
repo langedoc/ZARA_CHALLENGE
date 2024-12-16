@@ -1,0 +1,143 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    height: 630px;
+    top: 234px;
+    left: 360px;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0px;
+}
+
+.image_wrapper {
+    width: 510px;
+    height: 630px;
+    overflow: hidden;
+    position: relative;
+    gap: 0;
+    opacity: 0px;
+}
+
+.image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 0;
+    width: 380px;
+    height: 459px;
+    gap: 64px;
+    opacity: 0px;
+}
+
+.title_price {
+    width: 100%;
+    height: 64px;
+    gap: 11px;
+    opacity: 0px;
+}
+
+.title_price p {
+    font-family: Helvetica Neue;
+    font-weight: 300;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.name {
+    width: 100%;
+    height: 29px;
+    font-size: 24px;
+    line-height: 29.02px;
+    gap: 0;
+    opacity: 0px;
+}
+
+.price {
+    width: 100%;
+    height: 24px;
+    gap: 0;
+    opacity: 0px;
+    font-size: 20px;
+    line-height: 24.18px;
+}
+
+.selectors {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 211px;
+    gap: 40px;
+    opacity: 0px;
+}
+
+.storage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 106px;
+    gap: 24px;
+    opacity: 0px;
+}
+
+.storage p {
+    width: 100%;
+    height: 17px;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.93px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    gap: 0;
+    opacity: 0px;
+}
+
+.storage_options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 65px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.capacity {
+    width: 95px;
+    height: 65px;
+    padding: 24px;
+    gap: 0;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    opacity: 0px;
+    transition: border-color 0.3s;
+}
+
+.capacity.active {
+    border: 1px solid #000000;
+}
+
+.capacity p {
+    width: 47px;
+    height: 17px;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.93px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+    gap: 0px;
+    opacity: 0px;
+}
+
