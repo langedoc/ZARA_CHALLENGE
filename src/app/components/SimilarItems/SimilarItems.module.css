@@ -1,0 +1,30 @@
+.similar_items {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 553px;
+    top: 1768px;
+    left: 360px;
+    padding: 0 0 104px 0;
+    gap: 40px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.scroll_bar {
+    width: 1200px;
+    height: 1px;
+    top: 1px;
+    background-color: #CCCCCC;
+}
+
+.scroll_runner {
+    width: 150px;
+    height: 1px;
+    top: 1px;
+    background-color: #000000;
+}
