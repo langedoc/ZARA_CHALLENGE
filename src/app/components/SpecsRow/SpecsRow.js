@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import styles from '../SpecsRow/SpecsRow.module.css';
 export default function SpecsRow({ label, data }) {
     
     return (
-        <p key={label}>{label}:{data}</p>
+        <div className={styles.container}>
+            <p className={styles.label}>{label.toUpperCase()}</p>
+            <p className={styles.data}>{data}</p>
+        </div>
     );
 }
 

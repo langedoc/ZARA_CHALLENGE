@@ -25,10 +25,12 @@ export default function PhonePage() {
     };
 
     return (
-        <div className={styles.container}>
+        <>
             <Back />
-            <ProductInfo phoneDetails={phoneDetails} />
-            <Specs specs={phoneDetails.specs}/>
-        </div>
+            <div className={styles.container}>
+                <ProductInfo phoneDetails={phoneDetails} />
+                <Specs specs={phoneDetails.specs}/>
+            </div>
+        </>
     );
 }
