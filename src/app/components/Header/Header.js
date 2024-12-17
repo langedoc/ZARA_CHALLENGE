@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
+import Link from 'next/link';
 import { LiaShoppingBagSolid } from 'react-icons/lia';
 
 export default function Header() {
@@ -11,7 +12,9 @@ export default function Header() {
         </a>
       </div>
       <div className={styles.cart_container}>
-        <LiaShoppingBagSolid className={styles.icon} />
+        <Link href={'/cart'}>
+          <LiaShoppingBagSolid className={styles.icon} />
+        </Link>
         <span className={styles.item_count}>0</span>
       </div>
     </header>
