@@ -5,7 +5,18 @@
     height: 100%;
     padding: 0 100px;
     gap: 0px;
-    opacity: 0px;
+}
+
+@media (max-width: 834px) {
+    .cards_container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 393px) {
+    .cards_container {
+        padding: 0 16px;
+    }
 }
 
 
