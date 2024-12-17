@@ -10,6 +10,8 @@ export default function CartPage() {
     const { cart, removeFromCart } = useCart();
     const [isClient, setIsClient] = useState(false);
 
+    const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+
     useEffect(() => {
         // Set isClient to true after the component mounts
         setIsClient(true);
@@ -29,10 +31,19 @@ export default function CartPage() {
             </div>
             <div className={styles.bottom_content}>
                 <Link href="/" aria-label="Continue shopping">
-                    <button className={styles.continue}>
+                    <button className={`${styles.continue} ${styles.button}`}>
                         <h4>CONTINUE SHOPPING</h4>
                     </button>
                 </Link>
+                <div className={styles.total_pay}>
+                    <div className={styles.total}>
+                        <h3>TOTAL</h3>
+                        <h3>{totalPrice} EUR</h3>
+                    </div>
+                    <button className={`${styles.pay} ${styles.button}`}>
+                        <h3>PAY</h3>
+                    </button>
+                </div>
             </div>
         </div>
     );
