@@ -29,7 +29,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: Helvetica Neue;
   font-weight: 300;
 }
@@ -44,4 +44,8 @@ h2 {
 
 h3 {
   font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
 }

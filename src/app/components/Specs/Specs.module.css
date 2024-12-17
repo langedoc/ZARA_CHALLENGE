@@ -1,7 +1,9 @@
 .container {
+    flex-grow: 1in case of;
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: auto;
+    max-width: 100%;
     height: 596px;
     top: 1018px;
     left: 360px;

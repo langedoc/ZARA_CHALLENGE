@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import ClientProvider from './components/ClientProvider';
 import { PhonesProvider } from '../context/PhonesContext';
 import { PhonesDetailsProvider } from '@/context/PhonesDetailsContext';
+import { CartProvider } from '../context/CartContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,8 +30,10 @@ export default function RootLayout({ children }) {
         <ClientProvider>
           <PhonesProvider>
             <PhonesDetailsProvider>
-              <Header />
-              {children}
+              <CartProvider>
+                <Header />
+                {children}
+              </CartProvider>
             </PhonesDetailsProvider>
           </PhonesProvider>
         </ClientProvider>

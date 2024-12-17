@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './SmartphoneList.module.css';
 import SmartphoneCard from '../SmartphoneCard/SmartphoneCard';
 import { usePhonesSearch } from '../../../context/PhonesContext';
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function SmartphoneList() {
     const { uniquePhones } = usePhonesSearch();
