@@ -5,8 +5,12 @@ export default function SpecsRow({ label, data }) {
     
     return (
         <div className={styles.container}>
-            <p className={styles.label}>{label.toUpperCase()}</p>
-            <p className={styles.data}>{data}</p>
+            <div className={styles.label}>
+                <p>{label.toUpperCase()}</p>
+            </div>
+            <div className={styles.data}>
+                <p>{data}</p>
+            </div>
         </div>
     );
 }
