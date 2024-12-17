@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SmartphoneList.module.css';
-import SmartphoneCard from './../SmartphoneCard/SmartphoneCard';
-import { usePhonesSearch } from '../../context/PhonesContext';
+import SmartphoneCard from '../SmartphoneCard/SmartphoneCard';
+import { usePhonesSearch } from '../../../context/PhonesContext';
+import Link from 'next/link'
 
 export default function SmartphoneList() {
     const { uniquePhones } = usePhonesSearch();
@@ -10,7 +11,9 @@ export default function SmartphoneList() {
     return (
         <div className={styles.cards_container}>
             {uniquePhones.map((phone) => (
-                <SmartphoneCard key={phone.id} phone={phone} />
+                <Link href={`/phone/${phone.id}`} key={phone.id}>
+                    <SmartphoneCard phone={phone} />
+                </Link>
             )
             )}
         </div>

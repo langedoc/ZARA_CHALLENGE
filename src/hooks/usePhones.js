@@ -1,6 +1,6 @@
 // Since React 19 is used, version 5 of react-quer is requiered
 import { useQuery } from '@tanstack/react-query';
-import { fetchData } from '../api/api';
+import { fetchData } from '../app/api/api';
 
 export const usePhones = (query) => {
   // Starting from vertion 5 useQuery requeres an object instead of separate parameters

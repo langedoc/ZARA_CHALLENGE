@@ -1,3 +1,5 @@
+'use client';
+
 import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { usePhones } from '../hooks/usePhones';
@@ -20,8 +22,16 @@ export const PhonesProvider = ({ children }) => {
         (id) => data.find((phone) => phone.id === id)
     ).slice(0, 20);
 
+    const contextValue = {
+        searchQuery,
+        setSearchQuery,
+        uniquePhones,
+        isLoading,
+        error
+    };
+
     return (
-        <PhonesContext.Provider value={{ searchQuery, setSearchQuery, uniquePhones, isLoading, error }}>
+        <PhonesContext.Provider value={contextValue}>
             {children}
         </PhonesContext.Provider>
     );
