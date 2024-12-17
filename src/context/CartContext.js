@@ -8,16 +8,14 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
-
-    // Initialize the cart from local storage
-    useEffect(() => {
-        const savedCart = localStorage.getItem('cart');
-        if (savedCart) {
-            setCart(JSON.parse(savedCart));
+    const [cart, setCart] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const savedCart = localStorage.getItem('cart');
+            return savedCart ? JSON.parse(savedCart) : [];
         }
-    }, []);
-     
+        return []; // Default value for SSR
+    });
+
     // Save cart in local storage when cart changes 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));

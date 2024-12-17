@@ -1,14 +1,18 @@
 'use client';
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './page.module.css';
 import { useCart } from '../../context/CartContext';
 import CartItem from '../components/CartItem/CartItem';
 
 export default function CartPage() {
     const { cart, removeFromCart } = useCart();
+    const [isClient, setIsClient] = useState(false);
 
-    // const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+    useEffect(() => {
+        // Set isClient to true after the component mounts
+        setIsClient(true);
+    }, []);
 
     return (
         <div className={styles.cart_container}>
@@ -16,9 +20,11 @@ export default function CartPage() {
                 <h1>CART ({cart.length})</h1>
             </div>
             <div className={styles.items_list}>
-                {cart.map((item, index) => (
-                    <CartItem key={index} item={item} onRemove={() => removeFromCart(item.id)}/>
-                ))}
+                {isClient && cart.length > 0 ? ( // Only render cart items if on client and cart is not empty
+                    cart.map((item) => (
+                        <CartItem key={item.id} item={item} onRemove={() => removeFromCart(item.id)} />
+                    ))
+                ) : null}
             </div>
         </div>
     );
