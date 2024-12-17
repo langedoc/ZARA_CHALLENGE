@@ -1,9 +1,14 @@
+'use client';
+
 import React from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import { LiaShoppingBagSolid } from 'react-icons/lia';
+import { useCart } from '../../../context/CartContext';
 
 export default function Header() {
+  const { cart } = useCart();
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -15,7 +20,7 @@ export default function Header() {
         <Link href={'/cart'}>
           <LiaShoppingBagSolid className={styles.icon} />
         </Link>
-        <span className={styles.item_count}>0</span>
+        <span className={styles.item_count}>{cart.length}</span>
       </div>
     </header>
   );
