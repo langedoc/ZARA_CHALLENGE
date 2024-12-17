@@ -31,7 +31,12 @@ export default function ProductInfo({ phoneDetails }) {
             <div className={styles.product_info}>
                 <div className={styles.title_price}>
                     <h1 className={styles.name}>{phoneDetails.name.toUpperCase()}</h1>
-                    <h2 className={styles.price}>{phoneDetails.basePrice} EUR</h2>
+                    <h2 className={styles.price}>
+                        {selectedCapacity
+                            ? phoneDetails.storageOptions.find(option => option.capacity === selectedCapacity).price + ' EUR'
+                            : phoneDetails.basePrice + ' EUR'
+                        }
+                    </h2>
                 </div>
                 <div className={styles.selectors}>
                     <StorageInfo
