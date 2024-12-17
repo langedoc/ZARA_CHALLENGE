@@ -4,13 +4,25 @@ import styles from './ProductInfo.module.css';
 import StorageInfo from '../StorageInfo/StorageInfo';
 import ColorsInfo from '../ColorsInfo/ColorsInfo';
 import AddToCart from '../AddToCart/AddToCart';
+import { useCart } from '../../../context/CartContext';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
     
+    const selectedStorageOption = phoneDetails.storageOptions.find(option => option.capacity === selectedCapacity);
     const selectedColorOption = phoneDetails.colorOptions.find(option => option.name === selectedColor);
     const imageUrl = selectedColor ? selectedColorOption.imageUrl : phoneDetails.colorOptions[0].imageUrl; 
+
+    const cartItem = {
+        imageUrl: imageUrl,
+        name: phoneDetails.name,
+        selectedSpecs: {
+            storage: selectedStorageOption,
+            color: selectedColorOption,
+        },
+        price: selectedStorageOption ? selectedStorageOption.price : phoneDetails.basePrice,
+    };
 
     const handleCapacityClick = (capacity) => {
         setSelectedCapacity(capacity);
@@ -19,6 +31,12 @@ export default function ProductInfo({ phoneDetails }) {
     const handleColorClick = (color) => {
         setSelectedColor(color);
     }
+
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(cartItem);
+    };
 
     return (
         <div className={styles.container}>
@@ -49,7 +67,7 @@ export default function ProductInfo({ phoneDetails }) {
                         handleColorClick={handleColorClick}
                         selectedColor={selectedColor}
                     />
-                    <AddToCart capacity={selectedCapacity} color={selectedColor}/>
+                    <AddToCart onClick={handleAddToCart} capacity={selectedCapacity} color={selectedColor}/>
                 </div>
             </div>
         </div>
