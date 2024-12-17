@@ -6,7 +6,8 @@ import { useCart } from '../../context/CartContext';
 import CartItem from '../components/CartItem/CartItem';
 
 export default function CartPage() {
-    const { cart } = useCart();
+    const { cart, removeFromCart } = useCart();
+
     // const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
 
     return (
@@ -16,7 +17,7 @@ export default function CartPage() {
             </div>
             <div className={styles.items_list}>
                 {cart.map((item, index) => (
-                    <CartItem key={index} item={item} />
+                    <CartItem key={index} item={item} onRemove={() => removeFromCart(item.id)}/>
                 ))}
             </div>
         </div>

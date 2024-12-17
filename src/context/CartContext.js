@@ -30,7 +30,16 @@ export const CartProvider = ({ children }) => {
 
     // To remove item from the cart
     const removeFromCart = (itemId) => {
-        setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+        setCart((prevCart) => {
+            // The logic for cases when the same item is added more than once
+            const index = prevCart.findIndex((item) => item.id === itemId); // Finds index of the item in the prevCart
+            if (index !== -1) {
+                const newCart = [...prevCart]; // If the item is found creates new array
+                newCart.splice(index, 1); // Removes item at the found index
+                return newCart;
+            }
+            return prevCart;
+        });
     };
 
     return (
@@ -41,5 +50,5 @@ export const CartProvider = ({ children }) => {
 }
 
 CartProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
 };

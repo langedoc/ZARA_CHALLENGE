@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './CartItem.module.css';
 import PropTypes from 'prop-types';
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, onRemove }) {
 
     return (
         <div className={styles.cart_item}>
@@ -22,7 +22,7 @@ export default function CartItem({ item }) {
                         <h4>{item.price} EUR</h4>
                     </div>
                 </div>
-                <span className={styles.detele}>Eliminar</span>
+                <span onClick={() => onRemove(item.id)} className={styles.detele}>Eliminar</span>
             </div>
         </div>
     );
@@ -30,6 +30,7 @@ export default function CartItem({ item }) {
 
 CartItem.propTypes = {
     item: PropTypes.shape({
+        id: PropTypes.string.isRequired,
         imageUrl: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         selectedSpecs: PropTypes.shape({
@@ -38,4 +39,5 @@ CartItem.propTypes = {
         }).isRequired,
         price: PropTypes.string.isRequired,
     }).isRequired,
+    onRemove: PropTypes.func.isRequired,
 };

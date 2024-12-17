@@ -15,6 +15,7 @@ export default function ProductInfo({ phoneDetails }) {
     const imageUrl = selectedColor ? selectedColorOption.imageUrl : phoneDetails.colorOptions[0].imageUrl; 
 
     const cartItem = {
+        id: `${phoneDetails.id}-${selectedCapacity}-${selectedColor}`,
         imageUrl: imageUrl,
         name: phoneDetails.name,
         selectedSpecs: {
@@ -76,6 +77,7 @@ export default function ProductInfo({ phoneDetails }) {
 
 ProductInfo.propTypes = {
     phoneDetails: PropTypes.shape({
+        id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         basePrice: PropTypes.number.isRequired,
         storageOptions: PropTypes.arrayOf(PropTypes.shape({
