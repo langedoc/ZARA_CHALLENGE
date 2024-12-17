@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from './page.module.css';
 import { useCart } from '../../context/CartContext';
 import CartItem from '../components/CartItem/CartItem';
+import Link from 'next/link';
 
 export default function CartPage() {
     const { cart, removeFromCart } = useCart();
@@ -25,6 +26,13 @@ export default function CartPage() {
                         <CartItem key={item.id} item={item} onRemove={() => removeFromCart(item.id)} />
                     ))
                 ) : null}
+            </div>
+            <div className={styles.bottom_content}>
+                <Link href="/" aria-label="Continue shopping">
+                    <button className={styles.continue}>
+                        <h4>CONTINUE SHOPPING</h4>
+                    </button>
+                </Link>
             </div>
         </div>
     );
