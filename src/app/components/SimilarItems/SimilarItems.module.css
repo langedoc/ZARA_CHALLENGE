@@ -1,7 +1,8 @@
 .similar_items {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: auto;
+    max-width: 100%;
     height: 555px;
     top: 1768px;
     left: 360px;
@@ -22,7 +23,8 @@
 }
 
 .scroll_bar {
-    width: 1200px;
+    width: auto;
+    max-width: 100%;
     height: 1px;
     top: 1px;
     background-color: #CCCCCC;
