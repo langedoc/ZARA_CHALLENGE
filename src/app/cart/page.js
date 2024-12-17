@@ -30,20 +30,41 @@ export default function CartPage() {
                 ) : null}
             </div>
             <div className={styles.bottom_content}>
-                <Link href="/" aria-label="Continue shopping">
-                    <button className={`${styles.continue} ${styles.button}`}>
-                        <h4>CONTINUE SHOPPING</h4>
-                    </button>
-                </Link>
-                <div className={styles.total_pay}>
-                    <div className={styles.total}>
-                        <h3>TOTAL</h3>
-                        <h3>{totalPrice} EUR</h3>
-                    </div>
-                    <button className={`${styles.pay} ${styles.button}`}>
-                        <h3>PAY</h3>
-                    </button>
-                </div>
+                {isClient && window.innerWidth > 480 ? ( // Desctop rendering
+                    <>
+                        <Link href="/" aria-label="Continue shopping">
+                            <button className={`${styles.continue} ${styles.button}`}>
+                                <h4>CONTINUE SHOPPING</h4>
+                            </button>
+                        </Link>
+                        <div className={styles.total_pay}>
+                            <div className={styles.total}>
+                                <h3>TOTAL</h3>
+                                <h3>{totalPrice} EUR</h3>
+                            </div>
+                            <button className={`${styles.pay} ${styles.button}`}>
+                                <h3>PAY</h3>
+                            </button>
+                        </div>
+                    </>
+                ) : ( // Mobile rendering
+                    <>
+                        <div className={styles.total}>
+                            <h3>TOTAL</h3>
+                            <h3>{totalPrice} EUR</h3>
+                        </div>
+                        <div className={styles.buttons}>
+                            <Link href="/" aria-label="Continue shopping">
+                                <button className={`${styles.continue} ${styles.button}`}>
+                                    <h4>CONTINUE SHOPPING</h4>
+                                </button>
+                            </Link>
+                            <button className={`${styles.pay} ${styles.button}`}>
+                                <h3>PAY</h3>
+                            </button>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );

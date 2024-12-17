@@ -5,7 +5,7 @@ const API_URL =
 
 const apiClient = axios.create({
   baseURL: API_URL,
-  timeout: 1000,
+  timeout: 5000,
   headers: {
     'x-api-key': process.env.NEXT_PUBLIC_API_KEY,
   },

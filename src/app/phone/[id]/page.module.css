@@ -8,3 +8,17 @@
     gap: 48px;
     align-items: stretch;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 48px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0;
+    }
+}
+
+

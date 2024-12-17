@@ -10,6 +10,20 @@
     gap: 40px;
 }
 
+@media (max-width: 768px) {
+    .similar_items {
+    height: 563px;
+    padding: 0px 0px 80px 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .similar_items {
+    height: 530px;
+    padding: 0px 16px 80px 16px;
+    }
+}
+
 .carousel {
     display: flex;
     flex-direction: row;
