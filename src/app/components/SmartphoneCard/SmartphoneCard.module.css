@@ -34,6 +34,7 @@
   flex-direction: row;
   width: 312px;
   height: 31px;
+  justify-content: space-between;
   gap: 8px;
   opacity: 0px;
 }
@@ -41,7 +42,8 @@
 .brand {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: auto;
+  max-width: 100%;
   height: 31px;
   gap: 4px;
   opacity: 0px;
@@ -50,7 +52,8 @@
 .brand_name,
 .model,
 .price {
-  width: 250px;
+  width: auto;
+  max-width: 100%;
   gap: 0px;
   opacity: 0px;
   font-family: Helvetica Neue;
@@ -76,10 +79,12 @@
 }
 
 .price {
-  width: 54px;
+  width: auto;
+  max-width: 100%;
   height: 15px;
   font-size: 12px;
   line-height: 14.51px;
   text-align: right;
   align-self: flex-end;
+  white-space: nowrap;
 }
