@@ -21,6 +21,10 @@ Es una aplicación web a base de Next.js enfocada en la visualización, búsqued
 - React Router DOM
 - Vitest
 
+## Pendiente de solucionar
+
+> Nota: En este momento tengo un problema de Hydration mismatch porque los datos se están obteniendo en el cliente (es decir, fetching de datos en el cliente) en vez de hacerlo en el servidor. Esto está causando que haya diferencias entre lo que se renderiza en el servidor y lo que luego se muestra en el cliente. La idea es refactorizar la aplicación para que los datos se obtengan en el servidor (Server-side data fetching) y solucionar este problema.
+
 ## Architecture and Project Structure
 
 La aplicación sigue una arquitectura basada en componentes y aprovecha las capacidades de Next.js para el renderizado del lado del servidor (SSR) y la generación estática (SSG). 
