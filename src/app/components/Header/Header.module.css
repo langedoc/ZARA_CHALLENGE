@@ -22,38 +22,6 @@
   opacity: 1;
 }
 
-.cart_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 33px;
-  height: 26px;
-  padding: 4px 0px;
-  gap: 6px;
-  opacity: 0px;
-}
-
-.icon {
-  width: 18px;
-  height: 18px;
-  padding: 1.32px 2.76px 0.68px 3px;
-  gap: 0px;
-  opacity: 0px;
-}
-
-.item_count {
-  font-family: Helvetica Neue;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 16px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  width: 9px;
-  height: 16px;
-  opacity: 1;
-}
-
 @media (max-width: 834px) {
   .header {
     padding: 24px 40px;
