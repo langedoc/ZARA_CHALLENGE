@@ -3,11 +3,11 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
-import { usePhoneDetailsSearch } from '@/context/PhonesDetailsContext';
+import { usePhoneDetailsSearch } from '../../../context/PhonesDetailsContext';
 import Back from '../../components/Back/Back';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import Specs from '../../components/Specs/Specs';
-import SimilarItems from '@/app/components/SimilarItems/SimilarItems';
+import SimilarItems from '../../components/SimilarItems/SimilarItems';
 
 export default function PhonePage() {
     const pathname = usePathname();

@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { usePhoneDetails } from '@/hooks/usePhoneDetails';
+import { usePhoneDetails } from '../hooks/usePhoneDetails';
 
 const PhonesDetailsContext = createContext();
 

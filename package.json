@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "vitest"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.7",
@@ -15,15 +16,24 @@
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.13.0",
-    "prettier": "^3.4.2"
+    "jsdom": "^25.0.1",
+    "prettier": "^3.4.2",
+    "vitest": "^2.1.8"
   }
 }
