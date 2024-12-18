@@ -17,7 +17,7 @@ export default function Header() {
         </a>
       </div>
       <div className={styles.cart_container}>
-        <Link href={'/cart'}>
+        <Link href={'/cart'} aria-label="cart">
           <LiaShoppingBagSolid className={styles.icon} />
         </Link>
         <span className={styles.item_count}>{cart.length}</span>
