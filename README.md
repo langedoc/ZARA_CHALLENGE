@@ -63,7 +63,7 @@ La aplicación sigue una arquitectura basada en componentes y aprovecha las capa
 1. Clona el repositorio:
 
 ```bash
-git clone git@github.com:langedoc/ZARA_CHALLENGE.git
+https://github.com/langedoc/ZARA_CHALLENGE.git
 ```
 2. Instala las dependencias:
 
