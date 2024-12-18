@@ -1,4 +1,4 @@
-# ZARA CHALLENGE SMARTHONES
+# ZARA CHALLENGE SMARTPHONES
 
 Es una aplicación web a base de Next.js enfocada en la visualización, búsqueda y gestión de un catálogo de teléfonos móviles.
 
