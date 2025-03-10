@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { usePhoneDetailsSearch } from '../../../context/PhonesDetailsContext';
@@ -13,18 +13,24 @@ import LoadingBar from '../../components/LoadingBar/LoadingBar';
 export default function PhonePage() {
     const pathname = usePathname();
     const { isLoading, phoneDetails, setPhoneId } = usePhoneDetailsSearch();
+    const [showContent, setShowContent] = useState(false);
 
     const id = pathname.split('/').pop();
 
-    React.useEffect(() => {
+    useEffect(() => {
+        setShowContent(true);
         if (id) {
             setPhoneId(id);
         }
     }, [id, setPhoneId]);
 
+    if(!showContent){
+        return null;
+    }
+
     if (isLoading || !phoneDetails) {
-        return <LoadingBar />;
-    };
+        return <LoadingBar />
+    }
 
     /* Some of the similar products are duplicated. It filters duplicated products based on their 'id' to ensure
     that SimilarItems component receives only unique products.*/
