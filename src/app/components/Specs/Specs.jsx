@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Specs.module.css';
 import PropTypes from 'prop-types';
-import SpecsRow from '../SpecsRow/SpecsRow';
+import SpecsRow from './SpecsRow/SpecsRow';
 
 export default function Specs({ specs }) {
     
