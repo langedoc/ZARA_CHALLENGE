@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from './page.module.css';
 import { useCart } from '../../context/CartContext';
-import CartItem from '../components/CartItem/CartItem';
+import CartItem from '../components/CartPage/CartItem/CartItem';
 import Link from 'next/link';
 
 export default function CartPage() {
