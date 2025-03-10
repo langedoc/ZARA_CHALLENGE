@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import CartIcon from '../CartIcon/CartIcon';
+import CartIcon from './CartIcon/CartIcon';
 
 export default function Header() {
 

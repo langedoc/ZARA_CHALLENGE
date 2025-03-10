@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { LiaShoppingBagSolid } from 'react-icons/lia';
 import styles from './CartIcon.module.css';
-import { useCart } from '../../../context/CartContext';
+import { useCart } from '../../../../context/CartContext';
 
 const CartIcon = () => {
   const { cart } = useCart();
