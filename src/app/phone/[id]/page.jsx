@@ -4,7 +4,7 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { usePhoneDetailsSearch } from '../../../context/PhonesDetailsContext';
-import Back from '../../components/Back/Back';
+import Back from '../../components/PhonePage/Back/Back';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import Specs from '../../components/PhonePage/Specs/Specs';
 import SimilarItems from '../../components/PhonePage/SimilarItems/SimilarItems';
