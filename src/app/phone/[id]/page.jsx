@@ -8,10 +8,11 @@ import Back from '../../components/PhonePage/Back/Back';
 import ProductInfo from '../../components/PhonePage/ProductInfo/ProductInfo';
 import Specs from '../../components/PhonePage/Specs/Specs';
 import SimilarItems from '../../components/PhonePage/SimilarItems/SimilarItems';
+import LoadingBar from '../../components/LoadingBar/LoadingBar';
 
 export default function PhonePage() {
     const pathname = usePathname();
-    const { phoneDetails, setPhoneId } = usePhoneDetailsSearch();
+    const { isLoading, phoneDetails, setPhoneId } = usePhoneDetailsSearch();
 
     const id = pathname.split('/').pop();
 
@@ -21,8 +22,8 @@ export default function PhonePage() {
         }
     }, [id, setPhoneId]);
 
-    if (!phoneDetails) {
-        return <div>Loading...</div>;
+    if (isLoading || !phoneDetails) {
+        return <LoadingBar />;
     };
 
     /* Some of the similar products are duplicated. It filters duplicated products based on their 'id' to ensure

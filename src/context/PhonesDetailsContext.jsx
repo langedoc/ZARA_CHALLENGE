@@ -12,9 +12,6 @@ export const PhonesDetailsProvider = ({ children }) => {
     const [phoneId, setPhoneId] = useState(null);
     const { data, isLoading, error } = usePhoneDetails(phoneId);
 
-    if (isLoading) return null;
-    if (error) return <div>Error fetching data</div>;
-
     const contextValue = {
         phoneId,
         setPhoneId,
