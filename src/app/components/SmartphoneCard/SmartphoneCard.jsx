@@ -7,7 +7,7 @@ export default function SmartphoneCard({ phone }) {
   return (
     <div className={styles.card}>
       <div className={styles.image_wrapper}>
-        <img src={phone.imageUrl} />
+        <img src={phone.imageUrl} alt={`${phone.brand} ${phone.name}`} />
       </div>
       <div className={styles.info}>
         <div className={styles.brand}>
