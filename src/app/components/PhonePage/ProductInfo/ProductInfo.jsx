@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductInfo.module.css';
-import StorageInfo from '../StorageInfo/StorageInfo';
-import ColorsInfo from '../ColorsInfo/ColorsInfo';
-import AddToCart from '../AddToCart/AddToCart';
-import { useCart } from '../../../context/CartContext';
+import StorageInfo from '../../StorageInfo/StorageInfo';
+import ColorsInfo from '../../ColorsInfo/ColorsInfo';
+import AddToCart from '../../AddToCart/AddToCart';
+import { useCart } from '../../../../context/CartContext';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);

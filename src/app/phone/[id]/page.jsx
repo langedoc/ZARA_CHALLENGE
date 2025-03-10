@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { usePhoneDetailsSearch } from '../../../context/PhonesDetailsContext';
 import Back from '../../components/PhonePage/Back/Back';
-import ProductInfo from '../../components/ProductInfo/ProductInfo';
+import ProductInfo from '../../components/PhonePage/ProductInfo/ProductInfo';
 import Specs from '../../components/PhonePage/Specs/Specs';
 import SimilarItems from '../../components/PhonePage/SimilarItems/SimilarItems';
 
