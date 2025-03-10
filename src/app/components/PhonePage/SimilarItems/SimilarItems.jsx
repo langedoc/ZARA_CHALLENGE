@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './SimilarItems.module.css';
 import SmartphoneCard from '../../SmartphoneCard/SmartphoneCard';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 export default function SimilarItems({ similarItems }) {
     const carouselRef = React.useRef(null);
@@ -20,7 +21,9 @@ export default function SimilarItems({ similarItems }) {
             <h2>SIMILAR ITEMS</h2>
             <div className={styles.carousel} ref={carouselRef} onScroll={handleScroll}>
                 {similarItems.map((item) => (
-                    <SmartphoneCard key={item.id} phone={item} />
+                    <Link href={`/phone/${item.id}`} key={item.id}>
+                        <SmartphoneCard phone={item} />
+                    </Link>
                 ))}
             </div>
             <div className={styles.scroll_bar}>
