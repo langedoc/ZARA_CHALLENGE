@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SimilarItems.module.css';
-import SmartphoneCard from '../SmartphoneCard/SmartphoneCard';
+import SmartphoneCard from '../../SmartphoneCard/SmartphoneCard';
 import PropTypes from 'prop-types';
 
 export default function SimilarItems({ similarItems }) {
