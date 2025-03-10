@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Search from './components/Search/Search';
-import SmartphoneList from './components/SmartphoneList/SmartphoneList';
+import Search from './components/MainPage/Search/Search';
+import SmartphoneList from './components/MainPage/SmartphoneList/SmartphoneList';
 import styles from './page.module.css';
 
 

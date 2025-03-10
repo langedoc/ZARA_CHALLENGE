@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Search.module.css';
-import { usePhonesSearch } from '../../../context/PhonesContext';
+import { usePhonesSearch } from '../../../../context/PhonesContext';
 import { IoCloseOutline } from "react-icons/io5";
 
 export default function Search() {
