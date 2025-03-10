@@ -5,6 +5,7 @@ import StorageInfo from './StorageInfo/StorageInfo';
 import ColorsInfo from './ColorsInfo/ColorsInfo';
 import AddToCart from './AddToCart/AddToCart';
 import { useCart } from '../../../../context/CartContext';
+import { formatPrice } from '../../../../utils/formatPrice';
 
 export default function ProductInfo({ phoneDetails }) {
     const [selectedCapacity, setSelectedCapacity] = useState(null);
@@ -51,10 +52,12 @@ export default function ProductInfo({ phoneDetails }) {
                 <div className={styles.title_price}>
                     <h1 className={styles.name}>{phoneDetails.name.toUpperCase()}</h1>
                     <h2 className={styles.price}>
-                        {selectedCapacity
-                            ? phoneDetails.storageOptions.find(option => option.capacity === selectedCapacity).price + ' EUR'
-                            : phoneDetails.basePrice + ' EUR'
-                        }
+                        { formatPrice(
+                            selectedCapacity
+                                ? phoneDetails.storageOptions.find(option => option.capacity === selectedCapacity).price
+                                : phoneDetails.basePrice
+
+                        )}
                     </h2>
                 </div>
                 <div className={styles.selectors}>

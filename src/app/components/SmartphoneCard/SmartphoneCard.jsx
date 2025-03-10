@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SmartphoneCard.module.css';
+import { formatPrice } from '../../../utils/formatPrice';
 
 export default function SmartphoneCard({ phone }) {
   return (
@@ -13,7 +14,9 @@ export default function SmartphoneCard({ phone }) {
           <p className={styles.brand_name}>{phone.brand}</p>
           <p className={styles.model}>{phone.name}</p>
         </div>
-        <p className={styles.price}>{phone.basePrice} EUR</p>
+        <p className={styles.price}>
+          {formatPrice(phone.basePrice)}
+        </p>
       </div>
     </div>
   );
